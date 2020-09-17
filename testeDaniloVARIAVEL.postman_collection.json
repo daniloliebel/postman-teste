@@ -2120,8 +2120,8 @@
 	"variable": [
 		{
 			"id": "61296056-fd01-4c4f-906f-141b09c6ee08",
-			"key": "cliente",
-			"value": "panorama"
+			"key": "tags",
+			"value": "clientePanorama"
 		}
 	],
 	"protocolProfileBehavior": {}
