@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "a995a126-c5c7-43ea-b51b-59c0c76d23b9",
-		"name": "testeDanilo",
+		"_postman_id": "55060ab0-7165-4bbc-866f-86b4052ca52d",
+		"name": "testeDanilo Copy 2",
 		"description": "Padrões:\n- Aba Authorization: \n\tType -> \"No Auth\".\n- Aba Headers: \n\t- Key: Content-Type / Value: application/json\n\t- Key: Authorization / Value: token\n- Observação: Validação de token será necessário apenas para requisições posteriores ao Logon.\n- Para todas as requisições, verificar com testes se o código de resposta é [200], se há retorno de informações e tempo de performance.\n\nLOGON:\n- Setar URL em uma variável de ambiente, para ser usada nas outras requisições.\n- Logar com usuário e senha previamente cadastrados.\n- Verificar se ocorreu logon com sucesso.\n- Setar valor do token gerado em uma variável de ambiente para servir de autorização para outras requisições.\n\nVEICULO:\n- Testes de métodos auxiliares. \n- Para o teste será realizada a inserção e edição completa.\n\n\t- getMunicipio\n\t- getMarca\n\t- getModelo\n\t- getAgrupamentoVeiculo\n\t- getTipoCarroceriaVeiculo\n\n- Testes:\n- Inserção completa: \n\t- Com renavam correto.\n\t- Com renavam incorreto.\n\t- Verificar após a inserção se realmente os dados foram inseridos e gravados para todos os campos.\n\n- Edição completa:\n\t- Alterar todos os campos.\n\t- Verificar após a edição se realmente os dados foram editados e gravados para todos os campos.\n\nEntidade [PESSOAS]\n\nMOTORISTA/PRESTADOR DE SERVIÇOS/PARTICIPANTE/PESSOA ESTRANGEIRA\n- Testes de métodos auxiliares(necessário apenas um teste). \n- Para o teste será realizada a inserção e edição completa.\n- Motorista:\n\t- getNacionalidade\n\t- getTelefoneTipo\n\t- getEmailTipo\n\t- loadDadosPessoas\n\t- getBanco\n\t- getAgencia\n- Prestador de serviços:\n\t- getProprietarioLista\n\t- getAtividadeFiscal\n\t- getCNAE\n- Participante:\n\t- getClienteLista\n\t- getRegimeTributario\n\t- getTipoLucro\n\t- getPessoaDados\n\t- getCEP\n\nTestes:\n- Inserção completa:\n- Verificar após a inserção se realmente os dados foram inseridos e gravados para todos os campos.\n- Contato\n\t- Mais de um\n\t- Verificar se ambos foram inseridos\n- Email\n\t- Mais de um\n\t- Verificar se ambos foram inseridos\n- Endereço\n\t- Mais de um\n\t- Verificar se ambos foram inseridos\n- Conta Bancária\n\t- Mais de um\n\t- Verificar se ambos foram inseridos\n\n- Para todos os itens acima:\n\t- Criar casos de teste que se tente inserir registros duplicados para verificar se o sistema bloqueia.\n\t- 2 contatos iguais\n\t- 2 emails iguais\n\t- 2 endereços iguais\n\t- 2 contas bancárias iguais\n\n- Edição completa:\n\t- Alterar todos os campos, inclusive para os que foram inseridos dois registros.\n\t- Verificar após a edição se realmente os dados foram editados e gravados para todos os campos.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -10,12 +10,12 @@
 			"name": "LOGON",
 			"item": [
 				{
-					"name": "LOGON",
+					"name": "1 - LOGON",
 					"event": [
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "db62c6d4-e664-421e-878c-687c43e30fa2",
+								"id": "a591b9b0-b656-401e-b8a9-04412f6f02ce",
 								"exec": [
 									""
 								],
@@ -25,11 +25,11 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "6dfa3571-37f2-4b05-b761-339560a5550d",
+								"id": "82c1b777-f9f5-4868-985e-501dc34050b4",
 								"exec": [
 									"var jsonData = JSON.parse(responseBody);",
 									"",
-									"pm.test('Obter Resposta', function() {",
+									"pm.test(\"Obter Resposta\", function() {",
 									"    pm.expect(pm.response.code).to.be.oneOf([200]);",
 									"});",
 									"",
@@ -72,7 +72,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"module\": \"LOGON\",\r\n    \"operation\": \"LOGON\",\r\n    \"parameters\": {\r\n        \"username\": \"kmm_desenv\",\r\n        \"password\": \"Kmm$$2020\",\r\n        \"cod_gestao\": 90480\r\n    }\r\n}",
+							"raw": "{\r\n    \"module\": \"LOGON\",\r\n    \"operation\": \"LOGON\",\r\n    \"parameters\": {\r\n        \"username\": \"admincorp\",\r\n        \"password\": \"kmm2020\",\r\n        \"cod_gestao\": 91780\r\n    }\r\n}",
 							"options": {
 								"raw": {}
 							}
@@ -91,7 +91,7 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "dcd2082a-ee8c-43d9-ab2f-afa712121a53",
+						"id": "038f876d-845b-4778-9ded-fa8611d99915",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -101,7 +101,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "76853ca1-03a0-4950-a48f-a86f628745f0",
+						"id": "33594d3c-6f86-43dc-ab60-00b7d953e4a6",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -120,13 +120,13 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "a5545138-043c-4a6a-8e6d-2766e028c089",
+								"id": "8ad781f4-4724-45ae-a54e-d7591df3a153",
 								"exec": [
 									"//Variáveis",
 									"var jsonData = pm.response.json();",
 									"",
 									"//Funções",
-									"pm.test('Obter Resposta', function() {",
+									"pm.test(\"Obter Resposta\", function() {",
 									"    pm.expect(pm.response.code).to.be.oneOf([200]);",
 									"});",
 									"",
@@ -191,13 +191,13 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "37db5b27-8f1c-4420-be70-8791d96b2b36",
+								"id": "958473f9-4abc-4889-94e3-878d6e860f54",
 								"exec": [
 									"//Variáveis",
 									"var jsonData = pm.response.json();",
 									"",
 									"//Funções",
-									"pm.test('Obter Resposta', function() {",
+									"pm.test(\"Obter Resposta\", function() {",
 									"    pm.expect(pm.response.code).to.be.oneOf([200]);",
 									"});",
 									"",
@@ -262,13 +262,13 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "a54d363a-52bd-40f6-b935-5036b580b76c",
+								"id": "7c7cba05-93c5-4751-adaa-7ad4f066f234",
 								"exec": [
 									"//Variáveis",
 									"var jsonData = pm.response.json();",
 									"",
 									"//Funções",
-									"pm.test('Obter Resposta', function() {",
+									"pm.test(\"Obter Resposta\", function() {",
 									"    pm.expect(pm.response.code).to.be.oneOf([200]);",
 									"});",
 									"",
@@ -333,13 +333,13 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "a20b5585-6b2c-4282-bfd9-0da01417ed46",
+								"id": "d2d9ba1f-9e85-405c-aa62-bfc10e76a5de",
 								"exec": [
 									"//Variáveis",
 									"var jsonData = pm.response.json();",
 									"",
 									"//Funções",
-									"pm.test('Obter Resposta', function() {",
+									"pm.test(\"Obter Resposta\", function() {",
 									"    pm.expect(pm.response.code).to.be.oneOf([200]);",
 									"});",
 									"",
@@ -414,13 +414,13 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "9c465450-c01b-4199-99f9-540544bd6b70",
+								"id": "b8be4298-a184-4651-a458-f2628b6bdb54",
 								"exec": [
 									"//Variáveis",
 									"var jsonData = pm.response.json();",
 									"",
 									"//Funções",
-									"pm.test('Obter Resposta', function() {",
+									"pm.test(\"Obter Resposta\", function() {",
 									"    pm.expect(pm.response.code).to.be.oneOf([200]);",
 									"});",
 									"",
@@ -1008,7 +1008,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "d215e715-0dc4-4ef4-b41f-521058896bd9",
+								"id": "1bce9fed-d5ab-4108-9081-db73ef48188a",
 								"exec": [
 									"",
 									"// Gerar CPF",
@@ -1540,13 +1540,13 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "bbdc1336-000b-4fb6-aa02-02a3eecdcfa6",
+								"id": "f210c712-0531-4e2a-b5fd-cecf5217ed86",
 								"exec": [
 									"//Variáveis",
 									"var jsonData = pm.response.json();",
 									"",
 									"//Funções",
-									"pm.test('Obter Resposta', function() {",
+									"pm.test(\"Obter Resposta\", function() {",
 									"    pm.expect(pm.response.code).to.be.oneOf([200]);",
 									"});",
 									"",
@@ -1603,13 +1603,13 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "017f9f5a-14b8-4649-a806-2052a2e68b59",
+								"id": "3ce64582-798a-46d3-b71d-8afc5aee0a70",
 								"exec": [
 									"//Variáveis",
 									"var jsonData = pm.response.json();",
 									"",
 									"//Funções",
-									"pm.test('Obter Resposta', function() {",
+									"pm.test(\"Obter Resposta\", function() {",
 									"    pm.expect(pm.response.code).to.be.oneOf([200]);",
 									"});",
 									"",
@@ -2049,7 +2049,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "38630910-94dd-4842-abe1-4b90cba00b34",
+								"id": "3e0115fb-9d87-4b29-b0c4-f3769cc8c712",
 								"exec": [
 									""
 								],
@@ -2099,7 +2099,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "1511a2c5-cb4c-4197-bd0b-4d0d34f20926",
+				"id": "4d34737d-e896-4e1b-91c2-1512305fb7d4",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -2109,12 +2109,19 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "95347e2c-989c-4037-baca-b836321da5b7",
+				"id": "449b9fd6-f20d-40c1-8be8-9f439bfb4efd",
 				"type": "text/javascript",
 				"exec": [
 					""
 				]
 			}
+		}
+	],
+	"variable": [
+		{
+			"id": "623306cf-3fe7-4fa6-8d5f-de495ec72af2",
+			"key": "tags",
+			"value": "panorama"
 		}
 	],
 	"protocolProfileBehavior": {}
